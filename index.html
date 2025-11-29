@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spebelgenenst</title>
+    <title>𝕊𝕡𝕖𝕓𝕖𝕝𝕝 ₍^. .^₎⟆</title>
     <style>
         :root {
             --bg-color: #000000;
@@ -39,11 +39,23 @@
             text-decoration: underline;
         }
 
-        h1 {
-            font-size: 1.5rem;
+        .header {
             margin-bottom: 1rem;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 0.5rem;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .profile-pic {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .container {
@@ -87,11 +99,16 @@
     <button class="theme-toggle" onclick="toggleTheme()">Toggle Light/Dark</button>
 
     <div class="container">
-        <h1>Spebelgenenst</h1>
+        <div class="header">
+            <div class="profile-container">
+                <img src="https://cdn.discordapp.com/avatars/1217487724488167571/751e6b770d2b9d0eff1794517eb3e3d6?size=1024" alt="Spebelgenenst" class="profile-pic">
+                <h1>𝕊𝕡𝕖𝕓𝕖𝕝𝕝 ₍^. .^₎⟆</h1>
+            </div>
+        </div>
 
         <div class="section">
             <p>
-                Hello! I'm Spebelgenenst, a developer and really like open-source projects, gaming, and creative technology. I use Linux :33
+                Hello! I'm Spebelgenenst. I don't care about my pronouns. I'm a developer and really like open-source projects, gaming, and creative technology. I use Linux :33
             </p>
         </div>
 
@@ -120,15 +137,12 @@
     </div>
 
     <script>
-        // Überprüfe den gespeicherten Modus oder setze den Standard (Dark-Modus)
         if (localStorage.getItem('theme') === 'light') {
             document.body.classList.add('light-mode');
         }
 
         function toggleTheme() {
             document.body.classList.toggle('light-mode');
-
-            // Speichere die Einstellung im localStorage
             if (document.body.classList.contains('light-mode')) {
                 localStorage.setItem('theme', 'light');
             } else {
