@@ -5,51 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spebelgenenst</title>
     <style>
+        :root {
+            --bg-color: #000000;
+            --text-color: #f0f0f0;
+            --link-color: #4dabf7;
+            --border-color: #333;
+        }
+
+        body.light-mode {
+            --bg-color: #f9f9f9;
+            --text-color: #121212;
+            --link-color: #0066cc;
+            --border-color: #ddd;
+        }
+
         body {
             font-family: 'Courier New', monospace;
-            background-color: #000000;
-            color: #ffffff;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
             padding: 2rem;
             line-height: 1.6;
             font-size: 1rem;
+            transition: background-color 0.3s, color 0.3s;
         }
+
         a {
-            color: #4dabf7;
+            color: var(--link-color);
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
+
         h1 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 0.5rem;
         }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
         }
+
         .section {
             margin-bottom: 2rem;
         }
+
         .footer {
             margin-top: 3rem;
             font-size: 0.8rem;
             color: #888;
-            border-top: 1px solid #333;
+            border-top: 1px solid var(--border-color);
             padding-top: 1rem;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--border-color);
+            color: var(--text-color);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            z-index: 100;
+        }
+
+        .theme-toggle:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Light/Dark</button>
+
     <div class="container">
         <h1>Spebelgenenst</h1>
 
         <div class="section">
             <p>
-                Hello! I'm Spebelgenenst, a developer and i like open-source projects, gaming, and creative technology. I use Linux. :3333
+                Hello! I'm Spebelgenenst, a developer and enthusiast for open-source projects, gaming, and creative technology.
             </p>
         </div>
 
@@ -76,5 +118,23 @@
             <p>Inspired by <a href="https://github.com/owickstrom/the-monospace-web" target="_blank">The Monospace Web</a></p>
         </div>
     </div>
+
+    <script>
+        // Überprüfe den gespeicherten Modus oder setze den Standard (Dark-Modus)
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-mode');
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+
+            // Speichere die Einstellung im localStorage
+            if (document.body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+            } else {
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+    </script>
 </body>
 </html>
