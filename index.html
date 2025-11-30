@@ -125,6 +125,20 @@
             display: block;
         }
     </style>
+
+<style>
+  .snowflake {
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    position: fixed;
+    top: -2em;
+    z-index: 9999;
+    user-select: none;
+    cursor: default;
+    pointer-events: none;
+  }
+</style>
 </head>
 <body>
     <button class="theme-toggle" onclick="toggleTheme()">Toggle Light/Dark</button>
@@ -133,13 +147,13 @@
         <div class="header">
             <div class="profile-container">
                 <img src="https://avatars.githubusercontent.com/u/216315865" alt="Spebelgenenst" class="profile-pic">
-                <h1>𝕊𝕡𝕖𝕓𝕖𝕝𝕝 ₍^. .^₎⟆</h1>
+                <h1>Spebelgenenst ₍^. .^₎⟆</h1>
             </div>
         </div>
 
         <div class="section">
             <p>
-                Hello! I'm Spebelgenenst. I don't care about my pronouns. I'm a developer and really like open-source projects, gaming, and creative technology. I use Linux :33
+                Hi there! My name is Spebell! I don't care about my pronouns. I'm a developer and like open-source projects, gaming and technology. I can help you with linux, python, minecraft servers, datapacks and resourcepacks.
             </p>
         </div>
 
@@ -164,7 +178,6 @@
 
         <div class="footer">
             <p>© 2025 Spebelgenenst</p>
-            <p>Inspired by <a href="https://github.com/owickstrom/the-monospace-web" target="_blank">The Monospace Web</a></p>
         </div>
     </div>
 
@@ -200,5 +213,128 @@
             }
         });
     </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const snowflakesContainer = document.createElement("div");
+    snowflakesContainer.style.position = "fixed";
+    snowflakesContainer.style.top = "0";
+    snowflakesContainer.style.left = "0";
+    snowflakesContainer.style.width = "100%";
+    snowflakesContainer.style.height = "100%";
+    snowflakesContainer.style.pointerEvents = "none";
+    snowflakesContainer.style.zIndex = "9999";
+    snowflakesContainer.style.overflow = "hidden";
+
+    document.body.appendChild(snowflakesContainer);
+
+    function createSnowflake() {
+      const snowflake = document.createElement("div");
+      snowflake.classList.add("snowflake");
+      snowflake.textContent = "❄";
+
+      const startLeft = Math.random() * 100;
+      const endLeft = Math.random() * 100;
+      const duration = 5 + Math.random() * 10;
+      const size = 0.5 + Math.random() * 1.5;
+
+      snowflake.style.left = `${startLeft}%`;
+      snowflake.style.fontSize = `${size}em`;
+      snowflake.style.opacity = Math.random();
+      snowflake.style.animation = `fall ${duration}s linear infinite`;
+
+      snowflakesContainer.appendChild(snowflake);
+
+      setTimeout(() => {
+        snowflake.remove();
+      }, duration * 1000);
+    }
+
+    function addSnowflakeAnimation() {
+      const style = document.createElement("style");
+      style.textContent = `
+        @keyframes fall {
+          0% {
+            transform: translateY(-100px) translateX(0);
+          }
+          100% {
+            transform: translateY(100vh) translateX(100px);
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    addSnowflakeAnimation();
+
+    setInterval(createSnowflake, 100);
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Function to check if the current date is in winter
+    function isWinter() {
+      const now = new Date();
+      const month = now.getMonth(); // 0 = January, 11 = December
+      return month === 0 || month === 1 || month === 11; // January, February, December
+    }
+
+    if (isWinter()) {
+      const snowflakesContainer = document.createElement("div");
+      snowflakesContainer.style.position = "fixed";
+      snowflakesContainer.style.top = "0";
+      snowflakesContainer.style.left = "0";
+      snowflakesContainer.style.width = "100%";
+      snowflakesContainer.style.height = "100%";
+      snowflakesContainer.style.pointerEvents = "none";
+      snowflakesContainer.style.zIndex = "9999";
+      snowflakesContainer.style.overflow = "hidden";
+
+      document.body.appendChild(snowflakesContainer);
+
+      function createSnowflake() {
+        const snowflake = document.createElement("div");
+        snowflake.classList.add("snowflake");
+        snowflake.textContent = "❄";
+
+        const startLeft = Math.random() * 100;
+        const endLeft = Math.random() * 100;
+        const duration = 5 + Math.random() * 10;
+        const size = 0.5 + Math.random() * 1.5;
+
+        snowflake.style.left = `${startLeft}%`;
+        snowflake.style.fontSize = `${size}em`;
+        snowflake.style.opacity = Math.random();
+        snowflake.style.animation = `fall ${duration}s linear infinite`;
+
+        snowflakesContainer.appendChild(snowflake);
+
+        setTimeout(() => {
+          snowflake.remove();
+        }, duration * 1000);
+      }
+
+      function addSnowflakeAnimation() {
+        const style = document.createElement("style");
+        style.textContent = `
+          @keyframes fall {
+            0% {
+              transform: translateY(-100px) translateX(0);
+            }
+            100% {
+              transform: translateY(100vh) translateX(100px);
+            }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+
+      addSnowflakeAnimation();
+
+      setInterval(createSnowflake, 100);
+    }
+  });
+</script>
 </body>
 </html>
