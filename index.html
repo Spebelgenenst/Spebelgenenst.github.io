@@ -132,7 +132,7 @@
     <div class="container">
         <div class="header">
             <div class="profile-container">
-                <img src="https://avatars.githubusercontent.com/u/216315865" alt="Spebelgenenst" class="profile-pic">
+                <img id="profilePic" src="https://avatars.githubusercontent.com/u/216315865" alt="Spebelgenenst" class="profile-pic" style="cursor: pointer;">
                 <h1>𝕊𝕡𝕖𝕓𝕖𝕝𝕘𝕖𝕟𝕖𝕟𝕤𝕥 ₍^. .^₎⟆</h1>
             </div>
         </div>
@@ -198,6 +198,17 @@
                 const dinoGame = document.getElementById('dino-game');
                 dinoGame.classList.remove('active');
             }
+        })
+
+        const profilePic = document.getElementById('profilePic');
+        const originalSrc = profilePic.src;
+        const patGif = "https://github.com/Spebelgenenst/Spebelgenenst.github.io/blob/main/petpet.gif?raw=true";
+
+        profilePic.addEventListener('click', () => {
+            profilePic.src = patGif;
+            setTimeout(() => {
+                profilePic.src = originalSrc;
+            }, 2000);
         });
     </script>
 </body>
