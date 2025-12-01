@@ -1,0 +1,198 @@
+:root {
+    /* Dark Theme Overrides */
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --accent: #fc7a84; 
+    --border-color: #ffffff;
+    --font-stack: monospace;
+}
+
+[data-theme="light"] {
+    /* Light Theme Defaults */
+    --bg-color: #ffebed;
+    --text-color: #000000;
+    --accent: #fc7a84;
+    --border-color: #000000;
+}
+
+/* --- RESET & BASE --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: var(--font-stack);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- LAYOUT --- */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* --- TYPOGRAPHY --- */
+h1 {
+    font-size: 3rem;
+    font-weight: normal;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+a {
+    font-size: 1.2rem;
+}
+
+a::before {
+    content: ">";
+    color: var(--accent);
+    display: inline-block;
+    margin-right: 0.4rem;
+    vertical-align: middle;
+    font-weight: 600;
+}
+
+/* --- COMPONENTS --- */
+
+/* Theme Toggle */
+.theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+.theme-toggle:hover {
+    background: var(--accent);
+    color: var(--bg-color);
+}
+
+/* Profile Area */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 0%;
+    border: 5px solid var(--accent);
+    margin-bottom: 1rem;
+    image-rendering: pixelated;
+}
+
+.snowflake {
+    color: var(--text-color);
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    position: fixed;
+    top: -2em;
+    z-index: 9999;
+    user-select: none;
+    cursor: default;
+    pointer-events: none;
+  }
+
+/* Links & Lists */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Links Styling */
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+a:hover {
+    background-color: var(--accent);
+    color: var(--bg-color);
+    border-bottom: 1px solid var(--accent);
+}
+
+/* SVG Icon styling */
+svg {
+    width: 1rem;
+    height: 1rem;
+    fill: var(--text-color);
+    margin-right: 0.5rem;
+    display: inline-block;
+}
+
+/* Sections */
+.section {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-left: 1px solid var(--accent);
+    padding-left: 1.5rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    border-top: 1px solid var(--text-color);
+    width: 100%;
+}
+
+/* Mobile Adjustments */
+@media (max-height: 700px) {
+    main {
+        justify-content: flex-start;
+        padding-top: 4rem;
+    }
+}

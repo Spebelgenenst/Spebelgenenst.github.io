@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spebelgenenst :3</title>
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-color: #f0f0f0;
+            --link-color: #4dabf7;
+            --border-color: #333;
+        }
+
+        body.light-mode {
+            --bg-color: #ffffff;
+            --text-color: #121212;
+            --link-color: #0066cc;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+            font-size: 1rem;
+            transition: background-color 0.3s, color 0.3s;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .header {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .profile-pic {
+            width: 64px;
+            height: 64px;
+            border-radius: 10%;
+            object-fit: cover;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: #888;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--border-color);
+            color: var(--text-color);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            z-index: 101;
+        }
+
+        .theme-toggle:hover {
+            opacity: 0.8;
+        }
+
+    </style>
+<style>
+  .snowflake {
+    color: #ffffff;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    position: fixed;
+    top: -2em;
+    z-index: 9999;
+    user-select: none;
+    cursor: default;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Light/Dark</button>
+
+    <div class="container">
+        <div class="header">
+            <div class="profile-container">
+                <img id="profilePic" src="https://avatars.githubusercontent.com/u/216315865" alt="Spebelgenenst" class="profile-pic">
+                <h1>𝕊𝕡𝕖𝕓𝕖𝕝𝕘𝕖𝕟𝕖𝕟𝕤𝕥 ₍^. .^₎⟆</h1>
+            </div>
+        </div>
+
+        <div class="section">
+            <p>
+                Hai Hai :3 My name is Spebell! I don't care about my pronouns, But I prefer he/him. I'm a developer and like open-source projects, gaming and technology. I can help you with linux, python, minecraft servers, datapacks and resourcepacks.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Links</h2>
+            <ul>
+                <li><a href="https://github.com/Spebelgenenst" target="_blank">GitHub</a></li>
+                <li><a href="https://discordapp.com/users/1217487724488167571" target="_blank">Discord</a></li>
+                <li><a href="https://steamcommunity.com/id/Spebelgenenst/" target="_blank">Steam</a></li>
+                <li><a href="https://namemc.com/profile/SpebelGenenst.1" target="_blank">Minecraft (NameMC)</a></li>
+                <li><a href="https://osu.ppy.sh/users/38114896" target="_blank">Osu!</a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Projects</h2>
+            <ul>
+                <li><a href="https://github.com/Spebelgenenst/ai-experiment" target="_blank">My AI experiment</a></li>
+                <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">The meaning of life</a></li>
+                <a href="https://github.com/Spebelgenenst?tab=repositories" target="_blank">More..</a>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 Spebelgenenst</p>
+        </div>
+    </div>
+
+    <script>
+        // Light/Dark-Modus
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-mode');
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            if (document.body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+            } else {
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        const profilePic = document.getElementById('profilePic');
+        const originalSrc = profilePic.src;
+        const patGif = "https://github.com/Spebelgenenst/Spebelgenenst.github.io/blob/main/petpet.gif?raw=true";
+
+        profilePic.addEventListener('mouseover', () => {
+            profilePic.src = patGif;
+        });
+        profilePic.addEventListener('mouseout', () => {
+            profilePic.src = originalSrc;
+        });
+        
+    </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Function to check if the current date is in winter
+    function isWinter() {
+      const now = new Date();
+      const month = now.getMonth(); // 0 = January, 11 = December
+      return month === 0 || month === 11; // January, February, December
+    }
+
+    if (isWinter()) {
+      const snowflakesContainer = document.createElement("div");
+      snowflakesContainer.style.position = "fixed";
+      snowflakesContainer.style.top = "0";
+      snowflakesContainer.style.left = "0";
+      snowflakesContainer.style.width = "100%";
+      snowflakesContainer.style.height = "100%";
+      snowflakesContainer.style.pointerEvents = "none";
+      snowflakesContainer.style.zIndex = "9999";
+      snowflakesContainer.style.overflow = "hidden";
+
+      document.body.appendChild(snowflakesContainer);
+
+      function createSnowflake() {
+        const snowflake = document.createElement("div");
+        snowflake.classList.add("snowflake");
+        snowflake.textContent = "❄";
+
+        const startLeft = Math.random() * 100;
+        const endLeft = Math.random() * 100;
+        const duration = 5 + Math.random() * 10;
+        const size = 0.5 + Math.random() * 1.5;
+
+        snowflake.style.left = `${startLeft}%`;
+        snowflake.style.fontSize = `${size}em`;
+        snowflake.style.opacity = Math.random();
+        snowflake.style.animation = `fall ${duration}s linear infinite`;
+
+        snowflakesContainer.appendChild(snowflake);
+
+        setTimeout(() => {
+          snowflake.remove();
+        }, duration * 1000);
+      }
+
+      function addSnowflakeAnimation() {
+        const style = document.createElement("style");
+        style.textContent = `
+          @keyframes fall {
+            0% {
+              transform: translateY(-100px) translateX(0);
+            }
+            100% {
+              transform: translateY(100vh) translateX(100px);
+            }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+
+      addSnowflakeAnimation();
+
+      setInterval(createSnowflake, 100);
+    }
+  });
+</script>
+
+</body>
+</html>
