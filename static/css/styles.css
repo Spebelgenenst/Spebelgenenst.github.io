@@ -49,7 +49,7 @@ main {
 
 /* --- TYPOGRAPHY --- */
 h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: normal;
     border-bottom: 2px solid var(--accent);
     padding-bottom: 0.5rem;
@@ -107,7 +107,7 @@ a::before {
 /* Profile Area */
 .profile-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     text-align: center;
     width: 100%;
