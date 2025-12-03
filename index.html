@@ -72,6 +72,18 @@
             body.setAttribute('data-theme', newTheme);
         }
 
+        // pat pat function
+        const profilePic = document.getElementById('profilePic');
+        const originalSrc = profilePic.src;
+        const patGif = "https://github.com/Spebelgenenst/Spebelgenenst.github.io/blob/main/static/img/patpat.gif?raw=true";
+
+        profilePic.addEventListener('mouseover', () => {
+            profilePic.src = patGif;
+        });
+        profilePic.addEventListener('mouseout', () => {
+            profilePic.src = originalSrc;
+        });
+
         document.addEventListener("DOMContentLoaded", function() {
         // Function to check if the current date is in winter
         function isWinter() {
@@ -80,6 +92,7 @@
           return month === 0 || month === 11; // January, February, December
         }
 
+        //snowflake function
         if (isWinter()) {
           const snowflakesContainer = document.createElement("div");
           snowflakesContainer.style.position = "fixed";
