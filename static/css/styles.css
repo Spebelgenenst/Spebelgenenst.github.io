@@ -118,7 +118,7 @@ a::before {
     width: 120px;
     height: 120px;
     border-radius: 0%;
-    border: 5px solid var(--accent);
+    border: 1px solid var(--accent);
     margin-bottom: 1rem;
     image-rendering: pixelated;
 }
