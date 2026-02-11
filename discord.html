@@ -5,28 +5,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./static/img/favicon.ico">
-    <title>Spebelgenenst Discord :3</title>
+    <title>Spebelgenenst :3</title>
     <link rel="stylesheet" href="./static/css/styles.css">
 
-    <meta name="description" content="Spebelgenenst :3 — redirect to discord">
+    <meta name="description" content="Spebelgenenst :3 — Discord">
     <meta name="author" content="Spebelgenenst">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="noindex">
     <meta name="theme-color" content="#ffffff">
 
     <meta name="msapplication-TileColor" content="#2b5797">
 
-    <meta property="og:title" content="Spebelgenenst Discord :3">
-    <meta property="og:description" content="Spebelgenenst :3 — redirect to discord">
+    <meta property="og:title" content="Spebelgenenst :3">
+    <meta property="og:description" content="Discord">
     <meta property="og:type" content="website">
 </head>
-  </head>
-  <body>
-    <div class="section">
-        <h2>Redirect</h2>
-        <ul>
-            <li><a href="https://discordapp.com/users/1217487724488167571" target="_blank">You will be redirected to Discord!</a></li>
-        </ul>
-    </div>
-    
-  </body>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">toggle eye cancer</button>
+
+    <main>
+        <div class="header">
+            <div class="profile-container">
+                <img id="profilePic" src="https://avatars.githubusercontent.com/u/216315865" alt="Spebelgenenst" class="profile-pic">
+                <h1>𝕊𝕡𝕖𝕓𝕖𝕝𝕘𝕖𝕟𝕖𝕟𝕤𝕥</h1>
+            </div>
+        </div>
+
+        <div class="section">
+            <p>
+                Hai Hai :3 <br>
+                My name is Spebell! I do not care about my pronouns. <br>
+                I'm a dev and like open-sauce projects, gaming and cats. <br>
+                I use nyarch btw <br>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Redirect</h2>
+            <ul>
+                <li><a href="https://discordapp.com/users/1217487724488167571" target="_blank">If nothing happens, click here</a></li>
+            </ul>
+        </div>
+
+    <main>
+
+    <footer><p>&copy; Spebelgenenst | 2026</p></footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+        }
+
+        // pat pat function
+        const profilePic = document.getElementById('profilePic');
+        const originalSrc = profilePic.src;
+        const patGif = "./static/img/petpet.gif";
+
+        profilePic.addEventListener('mouseover', () => {
+            profilePic.src = patGif;
+        });
+        profilePic.addEventListener('mouseout', () => {
+            profilePic.src = originalSrc; 
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+        // Function to check if the current date is in winter
+        function isWinter() {
+          const now = new Date();
+          const month = now.getMonth(); // 0 = January, 11 = December
+          return month === 0 || month === 11; // January, February, December
+        }
+
+        //snowflake function
+        if (isWinter()) {
+          const snowflakesContainer = document.createElement("div");
+          snowflakesContainer.style.position = "fixed";
+          snowflakesContainer.style.top = "0";
+          snowflakesContainer.style.left = "0";
+          snowflakesContainer.style.width = "100%";
+          snowflakesContainer.style.height = "100%";
+          snowflakesContainer.style.pointerEvents = "none";
+          snowflakesContainer.style.zIndex = "9999";
+          snowflakesContainer.style.overflow = "hidden";
+
+          document.body.appendChild(snowflakesContainer);
+
+          function createSnowflake() {
+            const snowflake = document.createElement("div");
+            snowflake.classList.add("snowflake");
+            snowflake.textContent = "❄";
+
+            const startLeft = Math.random() * 100;
+            const endLeft = Math.random() * 100;
+            const duration = 5 + Math.random() * 10;
+            const size = 0.5 + Math.random() * 1.5;
+
+            snowflake.style.left = `${startLeft}%`;
+            snowflake.style.fontSize = `${size}em`;
+            snowflake.style.opacity = Math.random();
+            snowflake.style.animation = `fall ${duration}s linear infinite`;
+
+            snowflakesContainer.appendChild(snowflake);
+
+            setTimeout(() => {
+              snowflake.remove();
+            }, duration * 1000);
+        }
+
+        function addSnowflakeAnimation() {
+            const style = document.createElement("style");
+            style.textContent = `
+            @keyframes fall {
+                0% {
+                transform: translateY(-100px) translateX(0);
+                }
+                100% {
+                transform: translateY(100vh) translateX(100px);
+                }
+            }
+            `;
+            document.head.appendChild(style);
+        }
+
+        addSnowflakeAnimation();
+
+        setInterval(createSnowflake, 100);
+        }
+    });
+    </script>
+</body>
 </html>
